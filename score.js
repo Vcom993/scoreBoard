@@ -9,14 +9,10 @@ var p2Score = 0;
 var gameOver = false;
 var winningScore = 5;
 
-console.log('shit fuck')
-
-p1Button.addEventListener("click", function(){
-	console.log('!!!!!!')
-	// e.preventDefault();
+p1Button.addEventListener("click", function(e){
+	e.preventDefault();
 	if(!gameOver){
 		p1Score++;
-		console.log('!!!!!', p1Score);
 		if(p1Score === winningScore){
 			p1Display.classList.add("winner");
 			gameOver = true;
@@ -25,7 +21,8 @@ p1Button.addEventListener("click", function(){
 	}
 });
 
-p2Button.addEventListener("click", function(){
+p2Button.addEventListener("click", function(e){
+    e.preventDefault();
 	if(!gameOver){
 		p2Score++;
 		if(p2Score === winningScore){
@@ -36,7 +33,8 @@ p2Button.addEventListener("click", function(){
 	}
 });
 
-resetButton.addEventListener("click", function(){
+resetButton.addEventListener("click", function(e){
+    e.preventDefault();
 	p1Score = 0;
 	p2Score = 0;
 	p1Display.textContent = 0;
